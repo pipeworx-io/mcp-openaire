@@ -1,0 +1,20 @@
+{
+  "name": "@pipeworx/mcp-openaire",
+  "version": "0.1.0",
+  "description": "OpenAIRE MCP — EU research outputs (publications, datasets, software, projects)",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "openaire"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pipeworx-io/mcp-openaire"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

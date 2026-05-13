@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/openaire",
+  "title": "Openaire",
+  "description": "OpenAIRE MCP — EU research outputs (publications, datasets, software, projects)",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/openaire",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-openaire",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/openaire/mcp"
+    }
+  ]
+}
