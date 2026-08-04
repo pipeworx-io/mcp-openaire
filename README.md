@@ -1,19 +1,23 @@
-# mcp-openaire
+# @pipeworx/openaire
 
-OpenAIRE MCP — EU research outputs (publications, datasets, software, projects)
+OpenAIRE MCP — EU-funded research outputs: publications, datasets, software, projects (Horizon Europe, FP7, etc.). No auth.
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `search_publications` | Search scholarly publications (articles, preprints, theses, books). |
-| `search_datasets` | Search research datasets. |
-| `search_software` | Search research software registrations. |
-| `search_projects` | Search funded research projects (CORDIS for EC; also NSF, NIH, etc.). |
-| `get_research_product` | Fetch a single research product (publication / dataset / software) by OpenAIRE id. |
-| `get_project` | Fetch a project by OpenAIRE id. |
+- `search_publications(query, funder?, country?, year?, size?, page?)`
+- `search_datasets(query, size?, page?)`
+- `search_projects(query, funder?, country?, year?, size?, page?)`
+- `search_software(query, size?, page?)`
+- `get_publication(id)`
+- `get_project(id)`
+
+## Data source
+
+`https://api.openaire.eu/graph/v1/` — returns JSON. Public.
+
+Funder codes include: `ec__________::EC` (European Commission), `nih_________::NIH`, `wt__________::WT` (Wellcome Trust), `nsf_________::NSF`.
 
 ## Quick Start
 
@@ -29,7 +33,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -53,7 +57,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
