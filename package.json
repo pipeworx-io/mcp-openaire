@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-openaire",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "OpenAIRE MCP — EU research outputs (publications, datasets, software, projects)",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-29d017e0167fb7f74146611773b6000af7ec7ed3a7a7b09ec5ec3ad08a8b58d3",
-    "sourceCommit": "adb69d997f82a62e8e22b594488c7d04a227db35"
+    "sourceHash": "v1-2cd4569220c52390cfd9144068cde332f1db7e09ef7ce9057d6ecb498e7617f1",
+    "sourceCommit": "97740c6ee04c8acbfe7dddcacfde9e88ff2b9ca0"
   }
 }
