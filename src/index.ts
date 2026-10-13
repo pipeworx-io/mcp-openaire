@@ -797,11 +797,16 @@ async function searchProducts(type: string, args: Record<string, unknown>) {
     pageSize: String(Math.min(100, Math.max(1, (args.size as number) ?? 20))),
     page: String(Math.max(1, (args.page as number) ?? 1)),
   });
-  if (args.funder) params.set('relFundingShortName', String(args.funder));
-  if (args.country) params.set('country', String(args.country));
+  // Live-confirmed 2026-10-12 (fleet #2947): /researchProducts rejects
+  // relFundingShortName, country and bestOpenAccessRouteImpl with
+  // "400 Unknown parameter" — none of the three is in the API's own valid
+  // parameter list. Correct names re-verified live against the same endpoint:
+  // relProjectFundingShortName, countryCode, bestOpenAccessRightLabel=OPEN.
+  if (args.funder) params.set('relProjectFundingShortName', String(args.funder));
+  if (args.country) params.set('countryCode', String(args.country));
   if (args.from_year) params.set('fromPublicationDate', `${args.from_year}-01-01`);
   if (args.to_year) params.set('toPublicationDate', `${args.to_year}-12-31`);
-  if (args.open_access === true) params.set('bestOpenAccessRouteImpl', 'gold');
+  if (args.open_access === true) params.set('bestOpenAccessRightLabel', 'OPEN');
   return openaireFetch('researchProducts', params, args.query as string);
 }
 
