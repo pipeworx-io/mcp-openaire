@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-openaire",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "OpenAIRE MCP — EU research outputs (publications, datasets, software, projects)",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-openaire": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "openaire"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-openaire.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/openaire",
   "pipeworx": {
-    "sourceHash": "v1-6ad1ffb38ae0352673c7ddfff12a1162d24ed14abf519cbca4ece792a649d4be",
-    "sourceCommit": "f54ad77e789f27fe393978f9c080b5b18c87bb4f"
+    "mode": "gateway",
+    "slug": "openaire",
+    "gatewaySlug": "openaire",
+    "sourceHash": "v1-8b969dc486ce26724cf5f35f78924dac2c08b0d88721bfa19ddf0d0308a5a9d7",
+    "sourceCommit": "b2c4383545bb35171d0ada2beb1c9c7168ea175e"
   }
 }
